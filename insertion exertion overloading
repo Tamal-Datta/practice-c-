@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class abc{
+    int x,y;
+    public:
+    friend istream& operator>>(istream&,abc&);
+    friend ostream& operator<<(ostream&,abc);
+};
+
+istream& operator>>(istream& cin,abc& t)
+{
+    cin>>t.x>>t.y;
+    return cin;
+}
+
+ostream& operator<<(ostream& cout,abc t)
+{
+    cout<<t.x<<endl<<t.y<<endl;
+    return cout;
+}
+
+int main()
+{
+ abc ob;
+ cin>>ob;
+ cout<<ob;
+}
