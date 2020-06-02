@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+class abc{
+    int a,b;
+    public:
+    abc(int x,int y):a(x),b(y){cout<<"parameterize constructor"<<endl;}
+    abc():a(1),b(-1){cout<<"default constructor"<<endl;}
+    void get(){
+        cout<<a<<endl<<b<<endl;
+    }
+    ~abc(){
+        cout<<"destructor"<<endl;
+    }
+};
+
+int main()
+{
+    abc *p=new abc(),*q=new abc(5,6);
+    p->get();
+    q->get();
+    delete p;
+    delete q;
+}
