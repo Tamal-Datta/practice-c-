@@ -33,3 +33,43 @@ int main(){
     ob1.get();
     ob2.get();
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include<iostream>
+#include<cstring>
+using namespace std;
+class abc{
+    char *p;
+    public:
+    abc(){}
+    abc(const char *s)
+    {
+        p=new char[20];
+        strcpy(p,s);
+    }
+    void get()
+    {
+        cout<<p<<endl;
+    }
+    void modify()
+    {
+        strcpy(p,"datta");
+    }
+    
+    abc(abc& t)
+    {
+        p=new char[20];
+        strcpy(p,t.p);
+    }
+};
+int main()
+{
+    abc ob1("tamal");
+    abc ob2(ob1);
+    ob1.get();
+    ob2.get();
+    ob2.modify();
+    ob1.get();
+    ob2.get();
+    
+}
