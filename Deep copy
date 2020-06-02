@@ -1,0 +1,35 @@
+/////////////////////Deep copy////////////////////////////
+#include<iostream>
+using namespace std;
+class abc{
+    int *p;
+    public:
+    abc(){}
+    abc(int a){
+        p=new int;
+        *p=a;
+    }
+    abc(abc& b){
+        p=new int;
+        *p=*(b.p);
+    }
+    void get()
+    {
+        cout<<*p<<endl;
+    }
+    
+    void modify(int b)
+    {
+        *p=b;
+    }
+};
+
+int main(){
+    abc ob1(155);
+    ob1.get();
+    abc ob2(ob1);
+    ob2.get();
+    ob2.modify(5);
+    ob1.get();
+    ob2.get();
+}
